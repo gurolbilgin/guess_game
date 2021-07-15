@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+
+}
+.body,
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.body {
+    padding: 0;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, dodgerblue, #f298d1);
+  
+
+   
+}
+
+.container {
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 40rem;
+    width: 30rem;
+    border-radius: 1.5rem;
+    box-shadow: .3rem .2rem rgb(182, 176, 176);
+    /* background-image: url(./7321534.jpg);
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat; */
+
+
+
+  
+
+
+}
+
+.container::before {
+
+    background-image: url(./7321534.jpg);
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    /* back */
+    opacity: .7;
+}
+
+.context {
+    padding: 1rem;
+
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+.input {
+   
+}
