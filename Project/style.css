@@ -1,66 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-   
-
+    
 }
-.body,
-.container {
+
+.body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-
-.body {
     padding: 0;
     height: 100vh;
-    background-image: linear-gradient(to bottom right, dodgerblue, #f298d1);
-  
-
-   
+    background-image: linear-gradient(to bottom right, dodgerblue, #f298d1);    
 }
 
 .container {
-    flex-direction: column;
-    justify-content: space-between;
+    /* flex-direction: column;
+    justify-content: space-between; */
     text-align: center;
     height: 40rem;
     width: 30rem;
     border-radius: 1.5rem;
     box-shadow: .3rem .2rem rgb(182, 176, 176);
-    /* background-image: url(./7321534.jpg);
+    background-image: url(./7321534.jpg);
+    /* background-attachment: fixed; */
+    background-position-y: -4.5rem;
+    background-position-x: -5rem;
+    background-size: auto cover; 
+    
+}
+
+/* .container::before { */
+    /* content: '';
+    background-image: url(./7321534.jpg);
     background-attachment: fixed;
     background-position: top;
     background-repeat: no-repeat; */
 
+    /* background-image: url(./7321534.jpg);
+    opacity: .1;
+    background-position-y: -4.5rem;
+    background-position-x: -5rem;
+    background-size: auto cover;
 
 
-  
+}  */
+/* .input {
+    margin-bottom: 4rem;
+    
+} */
 
 
+/* .context {
+    display: flex;
+    flex-direction: column;
+    /* padding: 1rem; 
+
+} */
+
+.form-section,
+#guess-history {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    align-items: center;
+    max-width: 14rem;
+    /* padding-left: 0;
+    margin-left: 0; */
+    
 }
 
-.container::before {
-
-    background-image: url(./7321534.jpg);
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    /* back */
-    opacity: .7;
-}
-
-.context {
-    padding: 1rem;
-
+#guess-history,
+#current-result {
+    margin-top: 1.4rem;
 }
 
 h4 {
     font-size: 2rem;
 }
 
-.input {
-   
+span {
+    margin-left: 1rem;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+#guess {
+
+    
 }
