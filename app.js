@@ -2,14 +2,16 @@
 
 // Declaration of remaining attempts
 const attemptCount = document.getElementById("attempt")
-let remaining = 3;
+let remaining = 5;
 attemptCount.innerHTML = remaining
 
-const decrementAttemptsAndClearInput = () => {
-    currentInput.value = '';
-    remaining--
+decrementAttempt = () => {
+    remaining--;
     attemptCount.innerHTML = remaining
 } 
+clearInput = () => {
+    currentInput.value = '';
+}
 
 // input value 
 const currentInput = document.getElementById("guess-input");
@@ -40,42 +42,45 @@ window.onload = function () {
 
 
 const getInput = () => {
-    const createHistoryElement = document.createElement('div');
-    createHistoryElement.innerText = "You guessed " + currentInput.value;
-    createHistoryElement.classList.add('history-div')
-    guessHistory.append(createHistoryElement)
+    function addHistory () {
+        if (currentInput == '' || currentInput.value > 100 ||          currentInput.value < 1 ) {
+            createHistoryElement.innerHTML  = null
+        } else {
+            const createHistoryElement = document.createElement('div');
+            createHistoryElement.innerText = "You guessed " + currentInput.value;
+            createHistoryElement.classList.add('history-div')
+            guessHistory.append(createHistoryElement)
 
-    console.log(currentInput.value);
-
-
-    
+            console.log(currentInput.value);
+        }
+    }
     if (currentInput.value === '') {
         currentResult.innerHTML = `<div class='warning'>Please Enter a valid number</div>`;
+
     } else if (currentInput.value > 100 || currentInput.value < 1) { 
         currentResult.innerHTML = `<div class='warning'>Please Enter a number between 1 and 100</div>`;
-        currentInput.value = '';
-       
+        clearInput()
+
     }  else {
         if (currentInput.value > luckyNumber) {
             currentResult.innerHTML = `<div>Your guess is HIGH!</div>`;
-            decrementAttemptsAndClearInput();
-            console.log(remaining);
+            addHistory();
+            decrementAttempt();
+            clearInput()
+            if (remaining == 0) location.reload()
        
-         
         } else if (currentInput.value < luckyNumber) {
             currentResult.innerHTML = `<div>Your guess is LOW!</div>`;
-            decrementAttemptsAndClearInput();
-            console.log(remaining);
-       
-            
+            addHistory();
+            decrementAttempt();
+            clearInput()
+            if (remaining == 0) location.reload()
+          
         } else {
             currentResult.innerHTML = `<div>You have nailed it!</div>`;
-            location.replace("https://gurolbilgin.github.io/guess_game/")
-            // if (remaining == 0) {
-            //     window.stop
-            // }
-
-               // I can froze the page and use some fireworks at this point 
+            addHistory();
+            setTimeout(location.reload.bind(location), 2000);
+            
         }
     }
     
@@ -90,3 +95,4 @@ const resetGame = ()  => {
 }
 
 // the page needs to be prevented to refresh the information when it is reloaded
+

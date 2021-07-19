@@ -8,6 +8,7 @@
   <title>Guess Game</title>
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
+
 </head>
 
 <body>
@@ -15,6 +16,7 @@
     <section class="container">
       <h4>Enter Your Lucky Number Between 1 to 100</h4>
       <div class="context">
+        <div id="tsparticles"></div>
         <div class="form-section">
             <p>Remaining Attempts<span id="attempt"><span></p>
             <input type="number" id="guess-input"  placeholder="Guess What?">
@@ -35,9 +37,10 @@
 
     </section>
   </section>
-
-  
+  <script src="node_modules/confetti-js/dist/index.min.js"></script>
+ 
 </body>
-
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tsparticles@1.22.1"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tsparticles-shape-confetti@1.7.1"></script> -->
 </html>
 
