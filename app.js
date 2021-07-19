@@ -21,7 +21,7 @@ const currentResult = document.getElementById('current-result');
 const guessHistory = document.getElementById('guess-history');
 // lucky Random Number
 let luckyNumber = Math.ceil(Math.random() * 100);
-console.log(luckyNumber);
+// console.log(luckyNumber);
 // check button
 const checkButton = document.getElementById('check-button');
 // reset button
