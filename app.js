@@ -43,7 +43,7 @@ window.onload = function () {
 
 const getInput = () => {
     function addHistory () {
-        if (currentInput == '' || currentInput.value > 100 ||          currentInput.value < 1 ) {
+        if (currentInput == '' || currentInput.value > 100 || currentInput.value < 1 ) {
             createHistoryElement.innerHTML  = null
         } else {
             const createHistoryElement = document.createElement('div');
@@ -82,8 +82,8 @@ const getInput = () => {
             currentResult.classList.add('congrats')
             currentResult.innerHTML = `<div>You have nailed it!!</div> <br>
             <div>CONGRATS!!!  &#128521</div>`
-    
-            addHistory();
+            guessHistory.parentNode.removeChild(guessHistory);
+
             setTimeout(location.reload.bind(location), 3000);
             
         }
