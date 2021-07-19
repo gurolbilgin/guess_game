@@ -94,6 +94,7 @@ const resetGame = ()  => {
     currentResult.innerHTML = '';
     guessHistory.innerHTML = '';
     currentInput.value = '';
+    console.log(luckyNumber);
      
 }
 
