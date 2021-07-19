@@ -2,7 +2,7 @@
 
 // Declaration of remaining attempts
 const attemptCount = document.getElementById("attempt")
-let remaining = 5;
+let remaining = 10;
 attemptCount.innerHTML = remaining
 
 decrementAttempt = () => {
@@ -67,14 +67,16 @@ const getInput = () => {
             addHistory();
             decrementAttempt();
             clearInput()
-            if (remaining == 0) location.reload()
+            if (remaining == 0) resetGame()
+            // location.reload() can also be used
        
         } else if (currentInput.value < luckyNumber) {
             currentResult.innerHTML = `<div>Your guess is LOW!</div>`;
             addHistory();
             decrementAttempt();
             clearInput()
-            if (remaining == 0) location.reload()
+            if (remaining == 0) resetGame()
+            // location.reload() can also be used
           
         } else {
             currentResult.classList.add('congrats')
@@ -91,6 +93,8 @@ const getInput = () => {
 
 const resetGame = ()  => {
     luckyNumber = Math.floor(Math.random() * 100) + 1 ;
+    remaining = 10
+    attemptCount.innerHTML = remaining
     currentResult.innerHTML = '';
     guessHistory.innerHTML = '';
     currentInput.value = '';
