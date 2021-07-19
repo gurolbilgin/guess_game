@@ -70,7 +70,7 @@ const getInput = () => {
             
         } else {
             currentResult.innerHTML = `<div>You have nailed it!</div>`;
-            location.replace()
+            location.replace("https://gurolbilgin.github.io/guess_game/")
             // if (remaining == 0) {
             //     window.stop
             // }
