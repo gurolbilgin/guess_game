@@ -5,10 +5,12 @@
 body {
     margin: 0;
     padding: 0;
+;
     
 }
 
 .body {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,48 +20,20 @@ body {
 }
 
 .container {
-    /* flex-direction: column;
-    justify-content: space-between; */
+    position: absolute;
     text-align: center;
     height: 40rem;
     width: 30rem;
     border-radius: 1.5rem;
-    box-shadow: .3rem .2rem rgb(182, 176, 176);
-    background-image: url(./7321534.jpg);
-    /* background-attachment: fixed; */
-    background-position-y: -4.5rem;
-    background-position-x: -5rem;
-    background-size: auto cover; 
+    box-shadow: 0 0 80px rgb(65, 64, 64);
+    border: .5px solid rgba(6, 12, 32, 0.623);
+    background-image: url(./7321534.jpg);  
+    background-position-y: -15rem;
+    background-position-x: -.5rem;
+ 
     
 }
 
-/* .container::before { */
-    /* content: '';
-    background-image: url(./7321534.jpg);
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat; */
-
-    /* background-image: url(./7321534.jpg);
-    opacity: .1;
-    background-position-y: -4.5rem;
-    background-position-x: -5rem;
-    background-size: auto cover;
-
-
-}  */
-/* .input {
-    margin-bottom: 4rem;
-    
-} */
-
-
-/* .context {
-    display: flex;
-    flex-direction: column;
-    /* padding: 1rem; 
-
-} */
 
 .form-section,
 #guess-history {
@@ -76,19 +50,108 @@ body {
 #guess-history,
 #current-result {
     margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
 }
 
 h4 {
-    font-size: 2rem;
+    font-size: 1.87rem;
+    margin-bottom: 2rem;
+    margin-top: .6rem;
+    padding: 0;
+    color: rgba(42, 58, 83, 0.8);
+}
+
+/* remainig attempts style */
+
+p {
+    margin-top: 0;
+   
 }
 
 span {
+    padding:  .4rem;
     margin-left: 1rem;
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 800;
+    border: grey 1px solid;
+    border-radius: .5rem;
 }
 
-#guess {
+/* input field style */
+#guess-input {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    width: 11rem;
+    height: 2rem;
+    border-radius: 1.5rem;
+    border: 2px solid rgba(6, 12, 32, 0.623);
+    box-shadow: 0 0 15px 4px rgb(180, 177, 177);
+}
 
+#guess-input:focus {
+    outline-width: 0;
+}
+
+/* button style */
+
+.buttons {
+    margin-top: 1.5rem;
+}
+
+#check-button {
+    width: 6rem;
+    height: 2rem;
+    margin-right: .5rem;
+    margin-left: 0;
+    background-color: rgb(180, 243, 180);
+    border: .5px solid rgba(6, 12, 32, 0.623);
+    box-shadow: 0 0 15px rgb(24, 145, 44);
+
+}
+
+#reset-button {
+    width: 3rem;
+    height: 2rem;
+    margin-right: .5rem;
+    margin-left: 0;
+    background-color: rgb(238, 165, 153);
+    border: .5px solid rgba(6, 12, 32, 0.623);
+    box-shadow: 0 0 15px rgb(236, 120, 120);
+   
     
+}
+
+#check-button, 
+#reset-button {
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all .4s ease-in-out; 
+}
+
+
+#reset-button:hover,
+#check-button:hover {
+   transform: scale(1.1);
+}
+
+
+#check-button:hover {
+    background-color: rgb(68, 245, 68);
+    box-shadow: 0 0 20px 4px rgb(24, 145, 44);
+}
+
+#reset-button:hover {
+   transform: scale(1.1);
+   background-color: rgb(243, 99, 99);
+   box-shadow: 0 0 20px 4px rgb(247, 94, 94);
+}
+
+/* dynamic classes */
+.warning {
+    color: indianred;
+    
+}
+
+.history-div {
+    margin: .8rem;
 }
