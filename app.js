@@ -77,9 +77,12 @@ const getInput = () => {
             if (remaining == 0) location.reload()
           
         } else {
-            currentResult.innerHTML = `<div>You have nailed it!</div>`;
+            currentResult.classList.add('congrats')
+            currentResult.innerHTML = `<div>You have nailed it!!</div> <br>
+            <div>CONGRATS!!!  &#128521</div>`
+    
             addHistory();
-            setTimeout(location.reload.bind(location), 2000);
+            setTimeout(location.reload.bind(location), 3000);
             
         }
     }
