@@ -4,6 +4,13 @@
 const attemptCount = document.getElementById("attempt")
 let remaining = 3;
 attemptCount.innerHTML = remaining
+
+const decrementAttemptsAndClearInput = () => {
+    currentInput.value = '';
+    remaining--
+    attemptCount.innerHTML = remaining
+} 
+
 // input value 
 const currentInput = document.getElementById("guess-input");
 // return result value
@@ -39,6 +46,9 @@ const getInput = () => {
     guessHistory.append(createHistoryElement)
 
     console.log(currentInput.value);
+
+
+    
     if (currentInput.value === '') {
         currentResult.innerHTML = `<div class='warning'>Please Enter a valid number</div>`;
     } else if (currentInput.value > 100 || currentInput.value < 1) { 
@@ -48,15 +58,24 @@ const getInput = () => {
     }  else {
         if (currentInput.value > luckyNumber) {
             currentResult.innerHTML = `<div>Your guess is HIGH!</div>`;
-            currentInput.value = '';
-            remaining--;
+            decrementAttemptsAndClearInput();
             console.log(remaining);
+       
+         
         } else if (currentInput.value < luckyNumber) {
             currentResult.innerHTML = `<div>Your guess is LOW!</div>`;
-            currentInput.value = '';
+            decrementAttemptsAndClearInput();
+            console.log(remaining);
+       
+            
         } else {
             currentResult.innerHTML = `<div>You have nailed it!</div>`;
-            // I can froze the page and use some fireworks at this point 
+            location.replace()
+            // if (remaining == 0) {
+            //     window.stop
+            // }
+
+               // I can froze the page and use some fireworks at this point 
         }
     }
     

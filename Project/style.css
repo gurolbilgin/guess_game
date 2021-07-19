@@ -125,7 +125,7 @@ span {
 #reset-button {
     border-radius: .5rem;
     cursor: pointer;
-    transition: all .4s ease-in-out; 
+    transition: all .3s ease-in-out; 
 }
 
 
