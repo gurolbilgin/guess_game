@@ -20,7 +20,7 @@ const currentResult = document.getElementById('current-result');
 // return history
 const guessHistory = document.getElementById('guess-history');
 // lucky Random Number
-let luckyNumber = Math.ceil(Math.random() * 100);
+let luckyNumber = Math.floor(Math.random() * 100 + 1);
 console.log(luckyNumber);
 // check button
 const checkButton = document.getElementById('check-button');
