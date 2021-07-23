@@ -56,6 +56,7 @@ const getInput = () => {
     }
     if (currentInput.value === '') {
         currentResult.innerHTML = `<div class='warning'>Please Enter a valid number</div>`;
+        clearInput()
 
     } else if (currentInput.value > 100 || currentInput.value < 1) { 
         currentResult.innerHTML = `<div class='warning'>Please Enter a number between 1 and 100</div>`;
